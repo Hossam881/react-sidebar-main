@@ -3,10 +3,10 @@ import Sidebar from "./Sidebar";
 import Home from "./Pages/Home";
 import Team from "./Pages/Team";
 import Calender from "./Pages/Calender";
-import Map from "./Pages/map"
 import Projects from "./Pages/Projects";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
+import Map from "./Pages/map";
 
 const Pages = styled.div`
   width: 100vw;
@@ -31,7 +31,7 @@ function App() {
       <Pages>
         <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/home" component={Home} />
             <Route path="/team" component={Team} />
             <Route path="/calender" component={Calender} />
             <Route path="/map" component={Map}/>

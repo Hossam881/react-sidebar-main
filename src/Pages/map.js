@@ -2,6 +2,9 @@ import React from "react";
 import "./styles.css";
 import GoogleMapReact from "google-map-react";
 import MyMarker from "./MyMarker";
+import MotionHoc from "./MotionHoc";
+
+
 
 // implementation of this function is needed for codesandbox example to work
 // you can remove it otherwise
@@ -20,28 +23,31 @@ const points = [
   { id: 3, title: "The Serpentine", lat: 51.505, lng: -0.164 }
 ];
 
-export default function map() {
-  return (
-      <div className="App">
-        ;
-        <GoogleMapReact
+
+
+const Map = () => {
+
+   /*<div className="Map">*/
+    return <GoogleMapReact
             bootstrapURLKeys={{
-              // remove the key if you want to fork
-              key: "AIzaSyBG1fzK6zpo1iSDPsFRlB_Q0caaEiLKsqg",
-              language: "en",
-              region: "US"
+                // remove the key if you want to fork
+                key: "AIzaSyBG1fzK6zpo1iSDPsFRlB_Q0caaEiLKsqg",
+                language: "en",
+                region: "US"
             }}
             defaultCenter={{ lat: 51.506, lng: -0.169 }}
             defaultZoom={15}
             distanceToMouse={distanceToMouse}
         >
-          {points.map(({ lat, lng, id, title }) => {
-            return (
-                <MyMarker key={id} lat={lat} lng={lng} text={id} tooltip={title} />
-            );
-          })}
+            {points.map(({ lat, lng, id, title }) => {
+                return (
+                    <MyMarker key={id} lat={lat} lng={lng} text={id} tooltip={title} />
+                );
+            })}
         </GoogleMapReact>
-      </div>
-  );
-}
+    /*</div>*/
+};
 
+//const Map = MotionHoc(mapComponent);
+
+export default Map ;
