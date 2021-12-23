@@ -6,7 +6,7 @@ import Home from "../assets/home-solid.svg";
 import Team from "../assets/social.svg";
 import Calender from "../assets/sceduled.svg";
 import Projects from "../assets/starred.svg";
-import Documents from "../assets/draft.svg";
+import Map from "../assets/draft.svg";
 import PowerOff from "../assets/power-off-solid.svg";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
@@ -265,8 +265,8 @@ const Sidebar = () => {
             activeClassName="active"
             to="/documents"
           >
-            <img src={Documents} alt="Documents" />
-            <Text clicked={click}>Documents</Text>
+            <img src={Map} alt="Map" />
+            <Text clicked={click}>Map</Text>
           </Item>
           <Item
             onClick={() => setClick(false)}
