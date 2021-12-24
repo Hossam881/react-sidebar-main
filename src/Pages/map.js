@@ -23,7 +23,7 @@ function getPosition(position) {
 }
 
 const points = [
-  { id: 1, title: "Round Pond", lat: 51.462144  , lng: -0.3637248},
+  { id: 1, title: "Round Pond", lat:   , lng: },
   //{ id: 1, title: "Round Pond", lat: 51.506, lng: -0.184 },
   //{ id: 2, title: "The Long Water", lat: 51.508, lng: -0.175 },
   //{ id: 3, title: "The Serpentine", lat: 51.505, lng: -0.164 }
