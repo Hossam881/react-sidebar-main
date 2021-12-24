@@ -2,9 +2,6 @@ import React from "react";
 import "./styles.css";
 import GoogleMapReact from "google-map-react";
 import MyMarker from "./MyMarker";
-import MotionHoc from "./MotionHoc";
-
-
 
 // implementation of this function is needed for codesandbox example to work
 // you can remove it otherwise
@@ -16,11 +13,20 @@ const distanceToMouse = (pt, mp) => {
     );
   }
 };
+console.log("lat")
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(getPosition);
+}
+function getPosition(position) {
+    console.log(position.coords.latitude, position.coords.longitude);
+}
 
 const points = [
-  { id: 1, title: "Round Pond", lat: 51.506, lng: -0.184 },
-  { id: 2, title: "The Long Water", lat: 51.508, lng: -0.175 },
-  { id: 3, title: "The Serpentine", lat: 51.505, lng: -0.164 }
+  { id: 1, title: "Round Pond", lat: 51.462144  , lng: -0.3637248},
+  //{ id: 1, title: "Round Pond", lat: 51.506, lng: -0.184 },
+  //{ id: 2, title: "The Long Water", lat: 51.508, lng: -0.175 },
+  //{ id: 3, title: "The Serpentine", lat: 51.505, lng: -0.164 }
 ];
 
 
@@ -29,6 +35,7 @@ const Map = () => {
 
    /*<div className="Map">*/
     return <GoogleMapReact
+
             bootstrapURLKeys={{
                 // remove the key if you want to fork
                 key: "AIzaSyBG1fzK6zpo1iSDPsFRlB_Q0caaEiLKsqg",
@@ -44,7 +51,9 @@ const Map = () => {
                     <MyMarker key={id} lat={lat} lng={lng} text={id} tooltip={title} />
                 );
             })}
+
         </GoogleMapReact>
+
     /*</div>*/
 };
 
